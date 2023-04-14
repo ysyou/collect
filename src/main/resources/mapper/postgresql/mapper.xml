@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.clamos.io.collect.mapper.postgresql.PostgresqlMapper">
+    <select id="getTables" resultType="Map">
+        SELECT * FROM pg_catalog.pg_tables where schemaname = 'public';
+    </select>
+    <select id="getColumes" resultType="Map" parameterType="String">
+        SELECT
+            column_name as field
+             ,data_type as type
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_NAME = #{tablename}
+    </select>
+</mapper>

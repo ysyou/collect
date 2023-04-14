@@ -1,0 +1,7 @@
+spring:
+  main:
+    lazy-initialization: true #데이터 소스 없어도 프로젝트 시작
+  profiles:
+    active: local
+  application:
+    name: collect

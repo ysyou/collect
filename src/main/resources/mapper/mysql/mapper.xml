@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.clamos.io.collect.mapper.mysql.MysqlMapper">
+    <select id="getTables" resultType="Map" parameterType="String">
+        SELECT distinct (TABLE_NAME) as tablename
+        FROM INFORMATION_SCHEMA.COLUMNS
+        where TABLE_SCHEMA = #{dbName};
+    </select>
+
+    <select id="getColumes" resultType="Map" parameterType="String">
+        SELECT
+            COLUMN_NAME as field,
+          DATA_TYPE as type
+        FROM    information_schema.columns
+        where TABLE_NAME = #{tablename}
+    </select>
+</mapper>
