@@ -10,8 +10,9 @@ public class DataSourceDTO {
     String host;
     String port;
     String dbName;
-    String user;
-    String password;
+    String dbUser;
+    String dbPassword;
     String dbType;
+    String type;
     DataSource dataSource;
 }

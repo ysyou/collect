@@ -1,11 +1,12 @@
 package com.clamos.io.collect.config;
 
 import com.clamos.io.collect.dto.DataSourceDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import java.util.Map;
 import java.util.Objects;
-
+@Slf4j
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
     private static final ThreadLocal<DataSourceDTO> CONTEXT_HOLDER = new ThreadLocal<>();

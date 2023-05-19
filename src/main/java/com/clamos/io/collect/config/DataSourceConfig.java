@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +29,8 @@ public class DataSourceConfig {
         DataSource build = dataSourceBuilder
                 .driverClassName(driverName)
                 .url(dataSourceDTO.getUrl())
-                .username(dataSourceDTO.getUser())
-                .password(dataSourceDTO.getPassword()).build();
+                .username(dataSourceDTO.getDbUser())
+                .password(dataSourceDTO.getDbPassword()).build();
         return build;
 
     }

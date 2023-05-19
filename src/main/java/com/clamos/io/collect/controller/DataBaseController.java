@@ -2,9 +2,6 @@ package com.clamos.io.collect.controller;
 
 import com.clamos.io.collect.config.DataSourceConfig;
 import com.clamos.io.collect.dto.DataSourceDTO;
-import com.clamos.io.collect.mapper.mysql.MysqlMapper;
-import com.clamos.io.collect.mapper.postgresql.PostgresqlMapper;
-import com.clamos.io.collect.service.CommonService;
 import com.clamos.io.collect.service.DataBaseService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -14,11 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @Slf4j
 @RestController

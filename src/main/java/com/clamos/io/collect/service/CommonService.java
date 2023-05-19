@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class CommonService {
-    public String getUUID() {
-        return RandomStringUtils.randomAlphanumeric(Constant.SHORT_ID_LENGTH);
-    }
 
     public String getDriverName(String dataBaseType){
         String conClass = "";
