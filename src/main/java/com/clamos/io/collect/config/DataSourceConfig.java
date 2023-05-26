@@ -25,7 +25,7 @@ public class DataSourceConfig {
     public DataSource createDataSource(DataSourceDTO dataSourceDTO) {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
 //        String url = commonService.makeUrl(dataSourceDTO);
-        String driverName = commonService.getDriverName(dataSourceDTO.getDbType());
+        String driverName = commonService.getDriverName(dataSourceDTO.getSourceName());
         DataSource build = dataSourceBuilder
                 .driverClassName(driverName)
                 .url(dataSourceDTO.getUrl())

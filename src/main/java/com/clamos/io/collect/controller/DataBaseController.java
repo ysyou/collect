@@ -28,6 +28,7 @@ public class DataBaseController {
 
     @PostMapping
     public Map<String, Object> connection(@RequestBody DataSourceDTO dataSourceDTO) throws Exception {
+        //여기 명칭부터 정리해야됨
         DataSource dataSource;
         if (ObjectUtils.isEmpty(dataSourceMap.get(dataSourceDTO.getUrl()))) {
             dataSource = dataSourceConfig.createDataSource(dataSourceDTO);

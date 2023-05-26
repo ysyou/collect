@@ -27,7 +27,7 @@ public class DataBaseService {
     public Map<String,List<Map<String,Object>>> getSchemas(DataSourceDTO dataSourceDTO) {
         List<Map> tabeles = new ArrayList<>();
         Map<String,List<Map<String,Object>>> schemas = new HashMap<>();
-        switch (dataSourceDTO.getDbType()){
+        switch (dataSourceDTO.getSourceName()){
             case Constant.MYSQL:
                 tabeles = mysqlMapper.getTables(dataSourceDTO.getDbName());
                 for (Map tabele : tabeles) {
